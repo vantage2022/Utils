@@ -37,6 +37,7 @@ const redisTokenAdmin = {
         }
     },
     adminTokenMiddle: async function (req, res, next) {
+        /*
         req.token = req.header('admin-authorization')
         let v = await redis.keys('admin/session/' + req.token + '/*')
         if (v.length > 0) {
@@ -48,6 +49,8 @@ const redisTokenAdmin = {
         } else {
             console.debug('Admin 토큰 없음')
         }
+        */
+       console.log("skip admin authorization......");
         next()
     },
     getAdminFromToken: async function (token) {
