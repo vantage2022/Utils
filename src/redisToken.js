@@ -49,9 +49,9 @@ const redisToken = {
             let userInfo = {};
             userInfo.email ='vantagetestcg@gmail.com';
             userInfo.userId=1756;
-            req.userInfo = JSON.parse(userInfo)
+            req.userInfo = userInfo;
 
-            console.log('User Info Manually Set')
+            console.log('User Info Manually Set',req.userInfo.userId)
         }
         next()
     },
