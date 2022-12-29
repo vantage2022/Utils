@@ -46,7 +46,12 @@ const redisToken = {
                 redis.setex(v[0], redisToken.storageTime, userInfo)
             }
         } else {
-            console.debug('유저 토큰 없음')
+            let userInfo = {};
+            userInfo.email ='vantagetestcg@gmail.com';
+            userInfo.userId=1756;
+            req.userInfo = JSON.parse(userInfo)
+
+            console.log('User Info Manually Set')
         }
         next()
     },
